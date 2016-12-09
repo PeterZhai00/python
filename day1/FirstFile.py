@@ -117,18 +117,22 @@ print (b)
 print (a-b)
 
 '''
-
+#用户登陆（三次机会重试）
+"""
 user = "zhaikun"
 pwd = "zhai"
-count = 1
-while count <4:
+count = 0
+while count <3:
     userIN=input("请输入您的用户名：")
     pwdIN=input("请输入您的密码：")
     if user == userIN and pwd == pwdIN:
         print ("登录成功")
         break
+#    elif user != userIN or pwd != pwdIN:
     else:
         print ("用户名密码不正确，请重新输入")
         count +=1
-        continue
-print ("超过次数，滚蛋")
+    if count >=3:
+        print("超过次数，滚蛋")
+"""
+
